@@ -12,6 +12,11 @@
 		92E1A51C21A3D61000CA9F27 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92E1A51A21A3D61000CA9F27 /* Main.storyboard */; };
 		92E1A51E21A3D61400CA9F27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92E1A51D21A3D61400CA9F27 /* Assets.xcassets */; };
 		92E1A52121A3D61400CA9F27 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92E1A51F21A3D61400CA9F27 /* LaunchScreen.storyboard */; };
+		92E1A52921A3D8D700CA9F27 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E1A52821A3D8D700CA9F27 /* ResultViewController.swift */; };
+		92E1A52B21A4E89C00CA9F27 /* b48c3eb3f45fbb295d384264161eb412_1080x1346_h.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 92E1A52A21A4E89C00CA9F27 /* b48c3eb3f45fbb295d384264161eb412_1080x1346_h.jpg */; };
+		92E1A52D21A4E8A300CA9F27 /* original.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 92E1A52C21A4E8A300CA9F27 /* original.jpg */; };
+		92E1A52F21A4E8A900CA9F27 /* 213466cf0f78d54f6b0fbfb6cdaaeb56.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 92E1A52E21A4E8A900CA9F27 /* 213466cf0f78d54f6b0fbfb6cdaaeb56.jpg */; };
+		92E1A53121A4E8AE00CA9F27 /* red-velvet_main.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 92E1A53021A4E8AE00CA9F27 /* red-velvet_main.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +27,11 @@
 		92E1A51D21A3D61400CA9F27 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		92E1A52021A3D61400CA9F27 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		92E1A52221A3D61400CA9F27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92E1A52821A3D8D700CA9F27 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		92E1A52A21A4E89C00CA9F27 /* b48c3eb3f45fbb295d384264161eb412_1080x1346_h.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = b48c3eb3f45fbb295d384264161eb412_1080x1346_h.jpg; sourceTree = "<group>"; };
+		92E1A52C21A4E8A300CA9F27 /* original.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = original.jpg; sourceTree = "<group>"; };
+		92E1A52E21A4E8A900CA9F27 /* 213466cf0f78d54f6b0fbfb6cdaaeb56.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 213466cf0f78d54f6b0fbfb6cdaaeb56.jpg; sourceTree = "<group>"; };
+		92E1A53021A4E8AE00CA9F27 /* red-velvet_main.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "red-velvet_main.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,10 +66,15 @@
 			children = (
 				92E1A51621A3D61000CA9F27 /* AppDelegate.swift */,
 				92E1A51821A3D61000CA9F27 /* ViewController.swift */,
+				92E1A53021A4E8AE00CA9F27 /* red-velvet_main.jpg */,
+				92E1A52E21A4E8A900CA9F27 /* 213466cf0f78d54f6b0fbfb6cdaaeb56.jpg */,
+				92E1A52C21A4E8A300CA9F27 /* original.jpg */,
+				92E1A52A21A4E89C00CA9F27 /* b48c3eb3f45fbb295d384264161eb412_1080x1346_h.jpg */,
 				92E1A51A21A3D61000CA9F27 /* Main.storyboard */,
 				92E1A51D21A3D61400CA9F27 /* Assets.xcassets */,
 				92E1A51F21A3D61400CA9F27 /* LaunchScreen.storyboard */,
 				92E1A52221A3D61400CA9F27 /* Info.plist */,
+				92E1A52821A3D8D700CA9F27 /* ResultViewController.swift */,
 			);
 			path = SlideshowApp;
 			sourceTree = "<group>";
@@ -122,9 +137,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92E1A52B21A4E89C00CA9F27 /* b48c3eb3f45fbb295d384264161eb412_1080x1346_h.jpg in Resources */,
 				92E1A52121A3D61400CA9F27 /* LaunchScreen.storyboard in Resources */,
 				92E1A51E21A3D61400CA9F27 /* Assets.xcassets in Resources */,
+				92E1A53121A4E8AE00CA9F27 /* red-velvet_main.jpg in Resources */,
 				92E1A51C21A3D61000CA9F27 /* Main.storyboard in Resources */,
+				92E1A52D21A4E8A300CA9F27 /* original.jpg in Resources */,
+				92E1A52F21A4E8A900CA9F27 /* 213466cf0f78d54f6b0fbfb6cdaaeb56.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,6 +156,7 @@
 			files = (
 				92E1A51921A3D61000CA9F27 /* ViewController.swift in Sources */,
 				92E1A51721A3D61000CA9F27 /* AppDelegate.swift in Sources */,
+				92E1A52921A3D8D700CA9F27 /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
