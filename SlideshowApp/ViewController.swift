@@ -12,6 +12,11 @@ class ViewController: UIViewController {
     
     
     
+
+    @IBOutlet var Next: UIButton!
+    
+    @IBOutlet var Back: UIButton!
+    
     var selectedImage : UIImage!
     
     var image: UIImage!
@@ -45,7 +50,6 @@ class ViewController: UIViewController {
         
         imageView.image = image
         print(image)
-       
         
     }
    
@@ -53,6 +57,9 @@ class ViewController: UIViewController {
     
     
     @IBAction func unwind(_ segue: UIStoryboardSegue){
+        self.timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(updateTimer(_:)), userInfo: nil, repeats: true)
+        return
+
     }
     
     @IBAction func go(_ sender: Any) {
@@ -63,6 +70,10 @@ class ViewController: UIViewController {
         }else{
             dispImageNo += 0
         }
+        if self.timer != nil {
+            Next.isEnabled = false
+        }
+        
     }
     @IBAction func Return(_ sender: Any) {
         if self.timer == nil {
@@ -71,6 +82,10 @@ class ViewController: UIViewController {
         }else{
             dispImageNo -= 0
         }
+        if self.timer != nil {
+            Back.isEnabled = false
+        }
+        
     }
     
     @IBOutlet weak var change: UIButton!
@@ -82,6 +97,8 @@ class ViewController: UIViewController {
         
         if self.timer != nil {
             self.timer.invalidate()
+                Next.isEnabled = true
+                Back.isEnabled = true
             change.setTitle("再生", for: .normal)
             self.timer = nil
         }else {
@@ -89,14 +106,15 @@ class ViewController: UIViewController {
             self.timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(updateTimer(_:)), userInfo: nil, repeats: true)
             return
             }
-
         }
         if self.timer != nil {
-        let topimage = UIImage(named: "b48c3eb3f45fbb295d384264161eb412_1080x1346_h.jpg")
-        imageView.image = topimage
+            let topimage = UIImage(named: "b48c3eb3f45fbb295d384264161eb412_1080x1346_h.jpg")
+            imageView.image = topimage
         }
         
     }
+
+
     @objc func updateTimer(_ timer: Timer) {
         
         dispImageNo += 1
@@ -107,6 +125,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+            let topimage = UIImage(named: "b48c3eb3f45fbb295d384264161eb412_1080x1346_h.jpg")
+            imageView.image = topimage
+        
+
+
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -119,7 +143,7 @@ class ViewController: UIViewController {
         
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-       
+       self.timer.invalidate()
         let resultViewController:ResultViewController = segue.destination as! ResultViewController
         resultViewController.image = imageView.image
         print(image)

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_5" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,11 +15,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SlideshowApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0OF-Dq-pzO">
-                                <rect key="frame" x="40" y="652.66666666666663" width="47" height="40"/>
+                                <rect key="frame" x="40" y="694.66666666666663" width="47" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="4zT-bL-RBo"/>
                                     <constraint firstAttribute="width" constant="47" id="nOQ-zu-uAW"/>
@@ -31,7 +31,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jqt-hG-JnG">
-                                <rect key="frame" x="327" y="652" width="47" height="40"/>
+                                <rect key="frame" x="288" y="694" width="47" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="47" id="xji-Oa-FdK"/>
                                 </constraints>
@@ -42,17 +42,14 @@
                                 </connections>
                             </button>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZG7-hA-UHg">
-                                <rect key="frame" x="40" y="65" width="334" height="544"/>
+                                <rect key="frame" x="40" y="89" width="295" height="559"/>
                                 <gestureRecognizers/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="544" id="R5p-9g-quF"/>
-                                </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="IDE-Xf-jVB" appends="YES" id="rhR-lA-wLU"/>
                                 </connections>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b9T-bT-I4t">
-                                <rect key="frame" x="107" y="652" width="200" height="40"/>
+                                <rect key="frame" x="107" y="694" width="161" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <state key="normal" title="戻る"/>
                                 <connections>
@@ -71,6 +68,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0OF-Dq-pzO" secondAttribute="bottom" constant="43.5" id="jRK-wY-Z0u"/>
                             <constraint firstItem="0OF-Dq-pzO" firstAttribute="leading" secondItem="ZG7-hA-UHg" secondAttribute="leading" id="jaV-Cb-BiL"/>
                             <constraint firstItem="ZG7-hA-UHg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="ogS-58-yV7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ZG7-hA-UHg" secondAttribute="bottom" constant="130" id="su9-HO-3Br"/>
                             <constraint firstItem="b9T-bT-I4t" firstAttribute="bottom" secondItem="0OF-Dq-pzO" secondAttribute="bottom" id="tm9-r4-2S2"/>
                             <constraint firstItem="Jqt-hG-JnG" firstAttribute="top" secondItem="b9T-bT-I4t" secondAttribute="top" id="vAC-ju-KMs"/>
                             <constraint firstItem="Jqt-hG-JnG" firstAttribute="leading" secondItem="b9T-bT-I4t" secondAttribute="trailing" constant="20" id="yP4-gO-X5J"/>
@@ -78,8 +76,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="Back" destination="b9T-bT-I4t" id="2w2-Fd-52V"/>
+                        <outlet property="Next" destination="0OF-Dq-pzO" id="1lI-Bd-SGC"/>
                         <outlet property="change" destination="Jqt-hG-JnG" id="wjg-mQ-5jo"/>
                         <outlet property="imageView" destination="ZG7-hA-UHg" id="ngA-RJ-lbd"/>
+                        <outlet property="next" destination="0OF-Dq-pzO" id="4mS-c3-Pdl"/>
                         <segue destination="C2s-3d-QD5" kind="show" identifier="result" id="Ljv-f1-mnF"/>
                     </connections>
                 </viewController>
@@ -97,14 +98,11 @@
             <objects>
                 <viewController id="C2s-3d-QD5" customClass="ResultViewController" customModule="SlideshowApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="38U-KD-qYp">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dIG-tp-uUi">
-                                <rect key="frame" x="50" y="684.66666666666663" width="314" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="NX2-UJ-DEM"/>
-                                </constraints>
+                                <rect key="frame" x="50" y="742" width="275" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <state key="normal" title="戻る"/>
                                 <connections>
@@ -112,18 +110,17 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="46z-kc-MlT">
-                                <rect key="frame" x="0.0" y="20" width="414" height="658.33333333333337"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="658.33000000000004" id="IHR-ob-ClK"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="44" width="375" height="688"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="46z-kc-MlT" firstAttribute="trailing" secondItem="G5c-Ly-eG7" secondAttribute="trailing" id="2jf-tk-YSF"/>
                             <constraint firstItem="46z-kc-MlT" firstAttribute="top" secondItem="G5c-Ly-eG7" secondAttribute="top" id="DwI-Cp-hoi"/>
+                            <constraint firstItem="dIG-tp-uUi" firstAttribute="top" secondItem="46z-kc-MlT" secondAttribute="bottom" constant="10" id="JbD-V6-6o8"/>
                             <constraint firstItem="G5c-Ly-eG7" firstAttribute="trailing" secondItem="dIG-tp-uUi" secondAttribute="trailing" constant="50" id="RLI-r8-PYO"/>
-                            <constraint firstItem="G5c-Ly-eG7" firstAttribute="bottom" secondItem="dIG-tp-uUi" secondAttribute="bottom" constant="6.5" id="S5Z-wV-5vT"/>
+                            <constraint firstItem="G5c-Ly-eG7" firstAttribute="bottom" secondItem="dIG-tp-uUi" secondAttribute="bottom" id="S5Z-wV-5vT"/>
+                            <constraint firstAttribute="bottom" secondItem="46z-kc-MlT" secondAttribute="bottom" constant="80" id="bK2-QW-F3k"/>
                             <constraint firstItem="46z-kc-MlT" firstAttribute="leading" secondItem="G5c-Ly-eG7" secondAttribute="leading" id="ceE-D7-XK7"/>
                             <constraint firstItem="dIG-tp-uUi" firstAttribute="leading" secondItem="G5c-Ly-eG7" secondAttribute="leading" constant="50" id="taH-Ls-PqB"/>
                         </constraints>
@@ -136,7 +133,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4UL-gm-Qql" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="SC1-fD-PVm" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1144.8" y="156.97151424287858"/>
+            <point key="canvasLocation" x="1144.8" y="156.65024630541873"/>
         </scene>
     </scenes>
 </document>
