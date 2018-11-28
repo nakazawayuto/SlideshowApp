@@ -57,7 +57,9 @@ class ViewController: UIViewController {
     
     
     @IBAction func unwind(_ segue: UIStoryboardSegue){
+        if self.timer != nil {
         self.timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(updateTimer(_:)), userInfo: nil, repeats: true)
+        }
         return
 
     }
@@ -70,9 +72,6 @@ class ViewController: UIViewController {
         }else{
             dispImageNo += 0
         }
-        if self.timer != nil {
-            Next.isEnabled = false
-        }
         
     }
     @IBAction func Return(_ sender: Any) {
@@ -81,9 +80,6 @@ class ViewController: UIViewController {
         displayImage()
         }else{
             dispImageNo -= 0
-        }
-        if self.timer != nil {
-            Back.isEnabled = false
         }
         
     }
@@ -104,7 +100,10 @@ class ViewController: UIViewController {
         }else {
             if self.timer == nil {
             self.timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(updateTimer(_:)), userInfo: nil, repeats: true)
+                Next.isEnabled = false
+                Back.isEnabled = false
             return
+               
             }
         }
         if self.timer != nil {
@@ -143,7 +142,10 @@ class ViewController: UIViewController {
         
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-       self.timer.invalidate()
+        if self.timer != nil {
+            self.timer.invalidate()
+        }
+        
         let resultViewController:ResultViewController = segue.destination as! ResultViewController
         resultViewController.image = imageView.image
         print(image)
